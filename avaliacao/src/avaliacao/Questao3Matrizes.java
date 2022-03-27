@@ -13,7 +13,7 @@ public class Questao3Matrizes {
 		
 		System.out.println("Matriz 1");
 		for(int linha = 0; linha < array1.length; linha++) {
-			for(int coluna = 0; coluna < array1[0].length; coluna++) {
+			for(int coluna = 0; coluna < array1[linha].length; coluna++) {
 				System.out.print(array1[linha][coluna] + " ");
 			}
 			System.out.println();
@@ -21,7 +21,7 @@ public class Questao3Matrizes {
 		
 		System.out.println("Matriz 2");
 		for(int linha = 0; linha < array2.length; linha++) {
-			for(int coluna = 0; coluna < array2[0].length; coluna++) {
+			for(int coluna = 0; coluna < array2[linha].length; coluna++) {
 				System.out.print(array2[linha][coluna] + " ");
 			}
 			System.out.println();
@@ -30,7 +30,7 @@ public class Questao3Matrizes {
 		if(array1.length == array2.length && array1[0].length == array2[0].length) {
 			System.out.println("Os Arrays tem a mesma dimensão e poderão ser somados:");
 			for(int linha = 0; linha < array1.length; linha++) {
-				for(int coluna = 0; coluna < array1[0].length; coluna++) {
+				for(int coluna = 0; coluna < array1[linha].length; coluna++) {
 					subtracao[linha][coluna] = array1[linha][coluna] * array2[linha][coluna];
 					System.out.print(subtracao[linha][coluna] + " ");
 				}

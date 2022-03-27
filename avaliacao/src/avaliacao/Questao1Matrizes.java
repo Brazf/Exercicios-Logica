@@ -4,11 +4,8 @@ public class Questao1Matrizes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*1. A fim de praticar os conceitos aprendidos em sala de aula sobre itera¸c˜ao acerca de Arrays multidimensionais,
-		realize a opera¸c˜ao de adi¸c˜ao entre as matrizes. Sabendo da necessidade das matrizes terem a
-		mesma dimens˜ao para dada opera¸c˜ao, implemente no algoritmo a checagem antes de efetuar a soma.*/
 		int array1[][] = {{3,4},
-						  {5,6}, 
+						  {5,6},
 						  {7,8}};
 		int array2[][] = {{10,1},
 						   {3,5},
@@ -17,7 +14,7 @@ public class Questao1Matrizes {
 		
 		System.out.println("Matriz 1");
 		for(int linha = 0; linha < array1.length; linha++) {
-			for(int coluna = 0; coluna < array1[0].length; coluna++) {
+			for(int coluna = 0; coluna < array1[linha].length; coluna++) {
 				System.out.print(array1[linha][coluna] + " ");
 			}
 			System.out.println();
@@ -27,33 +24,48 @@ public class Questao1Matrizes {
 		
 		System.out.println("Matriz 2");
 		for(int linha = 0; linha < array2.length; linha++) {
-			for(int coluna = 0; coluna < array2[0].length; coluna++) {
+			for(int coluna = 0; coluna < array2[linha].length; coluna++) {
 				System.out.print(array2[linha][coluna] + " ");
 			}
 			System.out.println();
 		}
 		
+		int colunasArray1;
+		int colunasArray2;
+		int colum;
 		System.out.println();
-		
-		if(array1.length == array2.length && array1[0].length == array2[0].length) {
-			System.out.println("Os Arrays tem a mesma dimensão e poderão ser somados:");
-			System.out.println();
-			System.out.println("Quantidade de linhas do array1: " + array1.length);
-			System.out.println("Quantidade de colunas do array1: " + array1[0].length);
-			System.out.println("Quantidade de linhas do array2: " + array2.length);
-			System.out.println("Quantidade de colunas do array2: " + array2[0].length);
-			System.out.println();
+		if(array1.length == array2.length) {
+			colum = 0;
 			for(int linha = 0; linha < array1.length; linha++) {
-				for(int coluna = 0; coluna < array1[0].length; coluna++) {
-					soma[linha][coluna] = array1[linha][coluna] + array2[linha][coluna];
-					System.out.print(soma[linha][coluna] + " ");
+				colunasArray1 = 0;
+				colunasArray2 = 0;
+				for(int coluna = 0; coluna < array1[linha].length; coluna++) {
+					colunasArray1 += 1;
 				}
-				System.out.println();
-			}			
-		}
-		else {
+				for(int coluna = 0; coluna < array2[linha].length; coluna++) {
+					colunasArray2 += 1;
+				}
+				if(colunasArray1 == colunasArray2) {
+					colum ++;
+				}else {
+					System.out.println("As dimensões dos arrays não são igual, portanto não poderá ser realizada soma!");
+					break;
+				}
+			}
+			System.out.println();
+			if(colum == array1.length) {
+				System.out.println("Soma das Matrizes!");
+				for(int linha = 0; linha < array1.length; linha++) {
+					for(int coluna = 0; coluna < array1[linha].length; coluna++) {
+						soma[linha][coluna] = array1[linha][coluna] + array2[linha][coluna];
+						System.out.print(soma[linha][coluna] + " ");
+					}
+					System.out.println();
+				}
+			}
+		}else {
 			System.out.println("As dimensões dos arrays são igual, portanto não poderá ser realizada soma!");
-		}
+		}		
 	}
 
 }
