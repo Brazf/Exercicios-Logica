@@ -9,8 +9,10 @@ public class Questao3Matrizes {
 		int array2[][] = {{10,1},
 						   {3,5},
 						   {0,21}};
-		int subtracao[][] = new int[3][4];
+		int multiplicacao[][] = new int[2][2];
 		
+		
+		//ARRAY 1
 		System.out.println("Matriz 1");
 		for(int linha = 0; linha < array1.length; linha++) {
 			for(int coluna = 0; coluna < array1[linha].length; coluna++) {
@@ -19,6 +21,7 @@ public class Questao3Matrizes {
 			System.out.println();
 		}
 		
+		//ARRAY 2
 		System.out.println("Matriz 2");
 		for(int linha = 0; linha < array2.length; linha++) {
 			for(int coluna = 0; coluna < array2[linha].length; coluna++) {
@@ -27,24 +30,30 @@ public class Questao3Matrizes {
 			System.out.println();
 		}
 		
-		if(array1.length == array2.length && array1[0].length == array2[0].length) {
-			System.out.println("Os Arrays tem a mesma dimensão e poderão ser somados:");
-			for(int linha = 0; linha < array1.length; linha++) {
-				for(int coluna = 0; coluna < array1[linha].length; coluna++) {
-					subtracao[linha][coluna] = array1[linha][coluna] * array2[linha][coluna];
-					System.out.print(subtracao[linha][coluna] + " ");
+		//CÓDIGO DE MULTIPLICAÇÃO DOS ARRAYS E (teste de colunas array1 por linhas array2)
+		System.out.println();
+		
+		if(array1[0].length == array2.length) {
+			System.out.println("Para realizar a multiplicação das matrizes, a quantidade de colunas da Matriz 1 deve ter o mesmo valor do tamanho de linhas da Matriz B");
+			System.out.println("Colunas Array1: " + array1[0].length);
+			System.out.println("Linhas Array2: " + array2.length);
+			System.out.println("A multiplicação pode ser feita!");
+			System.out.println();
+			System.out.println("Resultado da multiplicaão das Matrizes!");
+			for(int linha = 0; linha < multiplicacao.length; linha++) {
+				for(int coluna = 0; coluna < array1.length; coluna++) {
+					for(int ind = 0; ind < array2.length; ind++) {
+						multiplicacao[linha][coluna] += (array1[linha][ind] * array2[ind][coluna]);
+					}
+					System.out.print(multiplicacao[linha][coluna] + " ");
 				}
 				System.out.println();
-			}			
+			}
 		}
-		else {
-			System.out.println("As dimensões dos arrays não são iguais, portanto não poderá ser realizada a multiplicação!");
-			System.out.println();
-			System.out.println("Quantidade de linhas do array1: " + array1.length);
-			System.out.println("Quantidade de colunas do array1: " + array1[0].length);
-			System.out.println("Quantidade de linhas do array2: " + array2.length);
-			System.out.println("Quantidade de colunas do array2: " + array2[0].length);
-		}
+		
+		
+		
+	// ÚLTIMAS CHAVES DO PROGRAMA!
 	}
 
 }
