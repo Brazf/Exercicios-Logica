@@ -15,13 +15,13 @@ public class Questao4Lista2 {
 		System.out.println("Números primos!");
 		for(int i = 1; i < array.length; i++) {
 			int cont = 0;
-			for(int n = 1; n <= i; n++) {
-				if( i % n == 0) {
+			for(int n = 1; n <= array[i]; n++) {
+				if( array[i] % n == 0) {
 					cont ++;
 				}
 			}
 		if(cont == 2) {
-			System.out.println("primo:" + i);
+			System.out.println("primo:" + array[i]);
 		}
 			}
 		}
